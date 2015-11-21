@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="sortArray">
+        <item>Most Popular</item>
+        <item>Highest-Rated</item>
+        <item>Vote Count</item>
+        <item>New Releases</item>
+    </string-array>
+    <string-array name="sortValues">
+        <item>popularity.desc</item>
+        <item>vote_average.desc</item>
+        <item>vote_count.desc</item>
+        <item>release_date.desc</item>
+    </string-array>
+</resources>
