@@ -1,7 +1,10 @@
 package net.gingz.popmoviez;
 
+import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
@@ -155,7 +158,7 @@ public class MovieFragment extends Fragment {
             String chosenSort = params[0];
 
             //REMEMBER TO ENTER API KEY HERE BEFORE YOU RUN
-            String appId = "< ENTER KEY >";
+            String appId = "< ENTER API KEY";
 
             try {
                 // Construct the URL for the OpenWeatherMap query
@@ -219,12 +222,27 @@ public class MovieFragment extends Fragment {
                 }
             }
             try {
-                return getMovieDataFromJson(movieJsonStr);
+                if (isOnline(getActivity())) {
+                    return getMovieDataFromJson(movieJsonStr);
+                }
+
             } catch (JSONException e) {
                 Log.e(LOG_TAG, e.getMessage(), e);
                 e.printStackTrace();
             }
             return null;
+        }
+
+        // As suggested to prevent crashing when no network is present
+        public boolean isOnline(Context context) {
+            ConnectivityManager cm =
+                    (ConnectivityManager) context.getSystemService(Context.CONNECTIVITY_SERVICE);
+
+            NetworkInfo activeNetwork = cm.getActiveNetworkInfo();
+            boolean isConnected = activeNetwork != null &&
+                    activeNetwork.isConnectedOrConnecting();
+
+            return isConnected;
         }
 
         private String[][] getMovieDataFromJson(String movieJsonStr)
