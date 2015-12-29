@@ -1,5 +1,6 @@
 package net.gingz.popmoviez;
 
+import android.app.FragmentTransaction;
 import android.content.Intent;
 import android.content.pm.FeatureGroupInfo;
 import android.os.Bundle;
@@ -47,4 +48,10 @@ public class MainActivity extends AppCompatActivity {
 
         return super.onOptionsItemSelected(item);
     }
+
+    @Override
+    public void onSaveInstanceState(Bundle savedInstanceState) {
+        super.onSaveInstanceState(savedInstanceState);
+    }
+
 }

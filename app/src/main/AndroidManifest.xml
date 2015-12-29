@@ -39,6 +39,7 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="net.gingz.popmoviez.MainActivity" />
         </activity>
+
         <activity
             android:name=".Test"
             android:label="@string/title_activity_test"
