@@ -404,7 +404,7 @@ public class FragmentDetailActivity extends Fragment {
         // REMEMBER TO ENTER API KEY HERE BEFORE YOU RUN
         // This is the 2nd of two places api-key is needed
 
-        String appId = "7e1cef5c1ec1a8c924df71aaf4e004c5";
+        String appId = "< ENTER API KEY >";
         final String APPID_PARAM = "api_key";
 
         private final String LOG_TAG = FetchTRData.class.getSimpleName();

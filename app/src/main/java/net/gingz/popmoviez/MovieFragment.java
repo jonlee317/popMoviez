@@ -244,7 +244,7 @@ public class MovieFragment extends Fragment {
     public class FetchMovieData extends AsyncTask<String, Void, String[][]> {
         // REMEMBER TO ENTER API KEY HERE BEFORE YOU RUN
         // This the first of two places where api key is needed
-        String appId = "7e1cef5c1ec1a8c924df71aaf4e004c5";
+        String appId = "< ENTER API KEY >";
         final String SORT_PARAM = "sort_by";
         final String APPID_PARAM = "api_key";
 
